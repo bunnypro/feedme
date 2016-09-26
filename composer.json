@@ -24,5 +24,6 @@
     "psr-4": {
       "Bunnypro\\FeedMe\\": "src/"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
