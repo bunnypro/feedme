@@ -1,6 +1,8 @@
 <?php namespace Bunnypro\FeedMe;
 
-class Article
+use Illuminate\Contracts\Support\Arrayable;
+
+class Article implements Arrayable
 {
     protected $attributes = [];
 
@@ -14,5 +16,15 @@ class Article
         if (array_key_exists($property, $this->attributes)) {
             return $this->attributes[$property];
         }
+    }
+
+    /**
+     * Get the instance as an array.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->attributes;
     }
 }
