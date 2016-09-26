@@ -1,6 +1,7 @@
 <?php namespace Bunnypro\FeedMe\Driver;
 
 use Bunnypro\FeedMe\Contract\FeedDriver;
+use Carbon\Carbon;
 use Symfony\Component\DomCrawler\Crawler;
 
 class TribunJogja implements FeedDriver
@@ -58,7 +59,7 @@ class TribunJogja implements FeedDriver
                 'image' => $content->filter('img')->attr('src'),
                 'link' => $content->filter('h3.fbo.f16.pt5.ln19 > a')->attr('href'),
                 'description' => stripslashes($content->filter('h4')->text()),
-                'date' => stripslashes($content->filter('time')->text()),
+                'date' => new Carbon(@explode($content->filter('time')->text())[1]),
             ]);
         }
 
