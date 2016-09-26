@@ -1,0 +1,17 @@
+{
+  "require": {
+    "symfony/dom-crawler": "^3.1",
+    "guzzlehttp/guzzle": "^6.2",
+    "illuminate/support": "5.2.*",
+    "filp/whoops": "^2.1",
+    "symfony/css-selector": "^3.1"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bunnypro\\FeedMe\\": "src/"
+    }
+  }
+}
